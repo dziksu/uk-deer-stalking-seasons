@@ -1,6 +1,10 @@
 # UK Deer Stalking Seasons
 
-![Red Deer stag](images/red-deer/1.jpg)
+<p align="center">
+  <img src="images/website/screen.png" alt="Website screenshot 1" width="32%">
+  <img src="images/website/srcreen2.png" alt="Website screenshot 2" width="32%">
+  <img src="images/website/screen3.png" alt="Website screenshot 3" width="32%">
+</p>
 
 A mobile-first, static website that shows the current UK deer stalking open season, live, based on today's date — plus a reference guide for each of the six deer species found in the UK.
 
@@ -54,3 +58,7 @@ Species photos are from [Geograph.org.uk](https://www.geograph.org.uk) and Wikim
 
 - All season data is hardcoded in `index.html` — there's no API or database. Update the `EWNI` / `SCOT` arrays in the `<script>` block to change dates.
 - This is a reference tool, not legal advice. Always confirm current law and required certification (DSC1/DSC2) with BASC or the British Deer Society before stalking.
+
+## License
+
+Code is licensed under the [MIT License](LICENSE). Species photos are separately licensed CC BY-SA 2.0 by their original authors (credited on each species page) and are not covered by the MIT license.
