@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- Primary SEO -->
+<title>UK Deer Stalking Seasons 2026 | Open &amp; Close Season Tracker</title>
+<meta name="description" content="Check today's UK deer stalking open season live — stags, hinds, bucks &amp; does for Red, Fallow, Sika, Roe, Chinese Water &amp; Muntjac deer across England, Wales, Northern Ireland &amp; Scotland.">
+<meta name="keywords" content="UK deer stalking, deer open season, deer close season, stag season, hind season, buck season, doe season, red deer, fallow deer, sika deer, roe deer, muntjac, chinese water deer, deer stalking England, deer stalking Scotland, deer stalking Wales, BASC, Deer Act 1991, Deer Scotland Act 1996">
+<meta name="author" content="Benjamin Rast">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f1712" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://ukdeerseasons.example.com/">
+
+<!-- Favicons -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%8C%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f1712'/%3E%3Ctext x='50%25' y='58%25' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E%F0%9F%A6%8C%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UK Deer Stalking Seasons">
+<meta property="og:url" content="https://ukdeerseasons.example.com/">
+<meta property="og:title" content="UK Deer Stalking Seasons | Open &amp; Close Season Tracker">
+<meta property="og:description" content="Live tracker for UK deer stalking open seasons — stags, hinds, bucks &amp; does across England, Wales, Northern Ireland &amp; Scotland, updated for today's date.">
+<meta property="og:image" content="https://ukdeerseasons.example.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="UK Deer Stalking Seasons open season tracker">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK Deer Stalking Seasons | Open &amp; Close Season Tracker">
+<meta name="twitter:description" content="Live tracker for UK deer stalking open seasons — stags, hinds, bucks &amp; does across England, Wales, Northern Ireland &amp; Scotland.">
+<meta name="twitter:image" content="https://ukdeerseasons.example.com/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UK Deer Stalking Seasons",
+  "description": "Live UK deer stalking open season tracker for stags, hinds, bucks and does across England, Wales, Northern Ireland and Scotland.",
+  "url": "https://ukdeerseasons.example.com/",
+  "applicationCategory": "ReferenceApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "en-GB",
+  "isAccessibleForFree": true,
+  "about": [
+    {"@type":"Thing","name":"Red Deer"},
+    {"@type":"Thing","name":"Fallow Deer"},
+    {"@type":"Thing","name":"Sika Deer"},
+    {"@type":"Thing","name":"Roe Deer"},
+    {"@type":"Thing","name":"Chinese Water Deer"},
+    {"@type":"Thing","name":"Muntjac Deer"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is deer stalking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deer stalking is the UK term for pursuing deer on foot with a rifle, distinct from hunting with hounds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When did Scotland abolish the close season for male deer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On 21 October 2023, the Scottish Government abolished the close season for all male deer, permitting year-round stalking of stags and bucks in Scotland."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Roe Deer and Chinese Water Deer present in Northern Ireland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Roe Deer and Chinese Water Deer are not present in Northern Ireland; their open season dates apply to England and Wales only."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">🦌 Deer Stalking UK</div>
+  <h1>Open Season Tracker</h1>
+  <p class="sub">Live status for stags, hinds, bucks &amp; does across the UK</p>
+  <span class="today-chip" id="todayChip"></span>
+</header>
+
+<div class="region-toggle">
+  <div class="segmented" id="regionToggle">
+    <button data-region="EWNI" class="active">England, Wales &amp; NI</button>
+    <button data-region="SCOT">Scotland</button>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="activeSection">
+    <div class="section-head">
+      <h2>Active Now</h2>
+      <span class="hint" id="activeHint"></span>
+    </div>
+    <div class="card-grid" id="activeCards"></div>
+  </section>
+
+  <section id="upcomingSection">
+    <div class="section-head">
+      <h2>Coming Up</h2>
+      <span class="hint">Next ~3 months</span>
+    </div>
+    <div class="card-grid" id="upcomingCards"></div>
+  </section>
+
+  <section id="referenceSection">
+    <div class="section-head">
+      <h2>Full Season Reference</h2>
+      <span class="hint" id="refHint"></span>
+    </div>
+    <div class="ref-table" id="refTable"></div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Explore Deer Species</h2></div>
+    <div class="species-grid">
+      <a class="species-tile" href="red-deer.html">
+        <img src="images/red-deer/1.jpg" alt="Red Deer stag" loading="lazy">
+        <div class="tile-label">Red Deer<span class="latin">Cervus elaphus</span></div>
+      </a>
+      <a class="species-tile" href="fallow-deer.html">
+        <img src="images/fallow-deer/1.jpg" alt="Fallow Deer buck" loading="lazy">
+        <div class="tile-label">Fallow Deer<span class="latin">Dama dama</span></div>
+      </a>
+      <a class="species-tile" href="sika-deer.html">
+        <img src="images/sika-deer/1.jpg" alt="Sika Deer stag" loading="lazy">
+        <div class="tile-label">Sika Deer<span class="latin">Cervus nippon</span></div>
+      </a>
+      <a class="species-tile" href="roe-deer.html">
+        <img src="images/roe-deer/1.jpg" alt="Roe Deer buck" loading="lazy">
+        <div class="tile-label">Roe Deer<span class="latin">Capreolus capreolus</span></div>
+      </a>
+      <a class="species-tile" href="chinese-water-deer.html">
+        <img src="images/chinese-water-deer/1.jpg" alt="Chinese Water Deer" loading="lazy">
+        <div class="tile-label">Chinese Water Deer<span class="latin">Hydropotes inermis</span></div>
+      </a>
+      <a class="species-tile" href="muntjac-deer.html">
+        <img src="images/muntjac-deer/1.jpg" alt="Muntjac Deer" loading="lazy">
+        <div class="tile-label">Muntjac Deer<span class="latin">Muntiacus reevesi</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Terms You Need to Know</h2></div>
+    <div class="glossary">
+      <div class="gloss-card"><div class="term">Stalking</div><div class="def">Pursuing deer on foot with a rifle — the UK term for deer hunting.</div></div>
+      <div class="gloss-card"><div class="term">Open Season</div><div class="def">Legal period when stalking a species/sex is permitted.</div></div>
+      <div class="gloss-card"><div class="term">Close Season</div><div class="def">Protected period for breeding &amp; rearing young — stalking prohibited.</div></div>
+      <div class="gloss-card"><div class="term">Stag / Hind</div><div class="def">Male / female Red &amp; Sika deer.</div></div>
+      <div class="gloss-card"><div class="term">Buck / Doe</div><div class="def">Male / female Fallow, Roe, Chinese Water &amp; Muntjac deer.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Legal &amp; Ethical Notes</h2></div>
+    <div class="legal">
+      <p><strong>Scotland, 21 Oct 2023:</strong> the close season for all male deer was abolished. Male deer can legally be stalked year-round, though many estates keep traditional summer/autumn cull dates for herd management.</p>
+      <p><strong>Muntjac:</strong> breed year-round so have no close season anywhere in the UK. BASC &amp; the British Deer Society advise culling only immature animals, bucks, or heavily pregnant does — avoid does with dependent young.</p>
+      <p><strong>Roe Deer &amp; Chinese Water Deer</strong> are not present in Northern Ireland; their listed dates apply to England &amp; Wales only.</p>
+      <p><strong>Red/Sika hybrids</strong> follow the same open season dates as pure Red and Sika deer.</p>
+      <p><strong>Permission &amp; licensing:</strong> stalking requires explicit written permission from the landowner or shooting rights holder, plus compliance with minimum calibre/energy rules under the Deer Act 1991 (England &amp; Wales) or the Deer (Scotland) Act 1996. Most estates require a DSC1 or DSC2 certificate.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Official Sources &amp; Legislation</h2></div>
+    <div class="link-list">
+      <div class="link-group">
+        <div class="link-group-title">Government &amp; Statutory Bodies</div>
+        <a class="link-item" href="https://www.gov.uk/guidance/deer-stalking-and-shooting-what-you-need-to-know" target="_blank" rel="noopener">
+          <span>gov.uk — Deer stalking and shooting: what you need to know</span><span class="arrow">↗</span>
+        </a>
+        <a class="link-item" href="https://www.nature.scot/professional-advice/protected-areas-and-species/protected-species/protected-species-z-guide/protected-species-deer" target="_blank" rel="noopener">
+          <span>NatureScot — Protected species: deer (Scotland)</span><span class="arrow">↗</span>
+        </a>
+        <a class="link-item" href="https://www.daera-ni.gov.uk/" target="_blank" rel="noopener">
+          <span>DAERA — Department of Agriculture, Environment &amp; Rural Affairs (NI)</span><span class="arrow">↗</span>
+        </a>
+      </div>
+      <div class="link-group">
+        <div class="link-group-title">Legislation</div>
+        <a class="link-item" href="https://www.legislation.gov.uk/ukpga/1991/54/contents" target="_blank" rel="noopener">
+          <span>Deer Act 1991 (England &amp; Wales)</span><span class="arrow">↗</span>
+        </a>
+        <a class="link-item" href="https://www.legislation.gov.uk/asp/1996/58/contents" target="_blank" rel="noopener">
+          <span>Deer (Scotland) Act 1996</span><span class="arrow">↗</span>
+        </a>
+        <a class="link-item" href="https://www.legislation.gov.uk/nisi/1985/171/contents" target="_blank" rel="noopener">
+          <span>Wildlife (Northern Ireland) Order 1985</span><span class="arrow">↗</span>
+        </a>
+        <a class="link-item" href="https://www.legislation.gov.uk/uksi/2007/2183/contents/made" target="_blank" rel="noopener">
+          <span>The Regulatory Reform (Deer) (England &amp; Wales) Order 2007</span><span class="arrow">↗</span>
+        </a>
+      </div>
+      <div class="link-group">
+        <div class="link-group-title">Industry &amp; Conservation Bodies</div>
+        <a class="link-item" href="https://basc.org.uk/shooting-seasons/" target="_blank" rel="noopener">
+          <span>BASC — Shooting seasons &amp; deer stalking guidance</span><span class="arrow">↗</span>
+        </a>
+        <a class="link-item" href="https://bds.org.uk/information-advice/about-deer/deer-close-season/" target="_blank" rel="noopener">
+          <span>British Deer Society — Deer close season</span><span class="arrow">↗</span>
+        </a>
+        <a class="link-item" href="https://www.gov.uk/guidance/deer-stalking-certificates" target="_blank" rel="noopener">
+          <span>gov.uk — Deer Stalking Certificates (DSC1 / DSC2)</span><span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+    <p class="link-disclaimer">These external sites are the authoritative source for current law — always verify against them before stalking, as legislation can change.</p>
+  </section>
+
+</main>
+
+<footer>Hardcoded reference data · Always confirm current law with BASC / British Deer Society before stalking.</footer>
+
+<script>
+(function(){
+  // ---- Data ----
+  // month is 1-12. allYear=true means no close season.
+  const EWNI = [
+    {species:"Red Deer", sex:"Stag", note:null, start:[8,1], end:[4,30]},
+    {species:"Red Deer", sex:"Hind", note:null, start:[11,1], end:[3,31]},
+    {species:"Fallow Deer", sex:"Buck", note:null, start:[8,1], end:[4,30]},
+    {species:"Fallow Deer", sex:"Doe", note:null, start:[11,1], end:[3,31]},
+    {species:"Sika Deer", sex:"Stag", note:null, start:[8,1], end:[4,30]},
+    {species:"Sika Deer", sex:"Hind", note:null, start:[11,1], end:[3,31]},
+    {species:"Roe Deer", sex:"Buck", note:"England & Wales only — not present in NI", start:[4,1], end:[10,31]},
+    {species:"Roe Deer", sex:"Doe", note:"England & Wales only — not present in NI", start:[11,1], end:[3,31]},
+    {species:"Chinese Water Deer", sex:"Buck", note:"England & Wales only — not present in NI", start:[11,1], end:[3,31]},
+    {species:"Chinese Water Deer", sex:"Doe", note:"England & Wales only — not present in NI", start:[11,1], end:[3,31]},
+    {species:"Muntjac Deer", sex:"Buck & Doe", note:"No close season", allYear:true},
+  ];
+  const SCOT = [
+    {species:"Red Deer", sex:"Stag", note:"No close season since 2023", allYear:true},
+    {species:"Red Deer", sex:"Hind", note:null, start:[10,21], end:[2,15]},
+    {species:"Fallow Deer", sex:"Buck", note:"No close season since 2023", allYear:true},
+    {species:"Fallow Deer", sex:"Doe", note:null, start:[10,21], end:[2,15]},
+    {species:"Sika Deer", sex:"Stag", note:"No close season since 2023", allYear:true},
+    {species:"Sika Deer", sex:"Hind", note:null, start:[10,21], end:[2,15]},
+    {species:"Roe Deer", sex:"Buck", note:"No close season since 2023", allYear:true},
+    {species:"Roe Deer", sex:"Doe", note:null, start:[10,21], end:[3,31]},
+    {species:"Muntjac Deer", sex:"Buck & Doe", note:"No close season", allYear:true},
+  ];
+
+  const SLUGS = {
+    "Red Deer":"red-deer.html",
+    "Fallow Deer":"fallow-deer.html",
+    "Sika Deer":"sika-deer.html",
+    "Roe Deer":"roe-deer.html",
+    "Chinese Water Deer":"chinese-water-deer.html",
+    "Muntjac Deer":"muntjac-deer.html",
+  };
+  const speciesLink = (name) => `<a href="${SLUGS[name]}">${name}</a>`;
+
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const fmtMD = ([m,d]) => `${d} ${MONTHS[m-1]}`;
+
+  const today = new Date();
+  const todayMD = (today.getMonth()+1)*100 + today.getDate();
+
+  function nextOccurrence(month, day){
+    let year = today.getFullYear();
+    let candidate = new Date(year, month-1, day);
+    if(candidate < stripTime(today)) candidate = new Date(year+1, month-1, day);
+    return candidate;
+  }
+  function stripTime(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function daysBetween(a,b){ return Math.round((stripTime(b) - stripTime(a)) / 86400000); }
+
+  function computeStatus(entry){
+    if(entry.allYear){
+      return {open:true, closesIn:null};
+    }
+    const startMD = entry.start[0]*100 + entry.start[1];
+    const endMD = entry.end[0]*100 + entry.end[1];
+    let open;
+    if(startMD <= endMD){
+      open = todayMD >= startMD && todayMD <= endMD;
+    } else {
+      open = todayMD >= startMD || todayMD <= endMD;
+    }
+    if(open){
+      const closeDate = nextOccurrence(entry.end[0], entry.end[1]);
+      return {open:true, closesIn: daysBetween(today, closeDate), closeDate};
+    } else {
+      const openDate = nextOccurrence(entry.start[0], entry.start[1]);
+      return {open:false, opensIn: daysBetween(today, openDate), openDate};
+    }
+  }
+
+  function dateRangeLabel(entry){
+    if(entry.allYear) return "All year round";
+    return `${fmtMD(entry.start)} – ${fmtMD(entry.end)}`;
+  }
+
+  const REGION_LABEL = {EWNI:"England, Wales & Northern Ireland", SCOT:"Scotland"};
+  let currentRegion = "EWNI";
+
+  function render(){
+    const data = currentRegion === "EWNI" ? EWNI : SCOT;
+    const computed = data.map(e => ({...e, status: computeStatus(e)}));
+
+    const active = computed.filter(e => e.status.open);
+    const closed = computed.filter(e => !e.status.open);
+    const upcoming = closed
+      .filter(e => e.status.opensIn <= 100)
+      .sort((a,b) => a.status.opensIn - b.status.opensIn);
+
+    document.getElementById("activeHint").textContent = REGION_LABEL[currentRegion];
+    document.getElementById("refHint").textContent = REGION_LABEL[currentRegion];
+
+    // Active cards
+    const activeCards = document.getElementById("activeCards");
+    if(active.length === 0){
+      activeCards.innerHTML = `<div class="empty-msg">No open seasons right now in ${REGION_LABEL[currentRegion]}.</div>`;
+    } else {
+      activeCards.innerHTML = active.map(e => `
+        <div class="status-card is-open">
+          <div class="row1">
+            <span class="species-name">${speciesLink(e.species)}</span>
+            <span class="badge open">Open</span>
+          </div>
+          <span class="sex-tag">${e.sex}</span>
+          <span class="dates">${dateRangeLabel(e)}</span>
+          ${e.status.closesIn !== null ? `<span class="countdown">Closes in ${e.status.closesIn} day${e.status.closesIn===1?'':'s'} (${fmtMD(e.end)})</span>` : `<span class="countdown">No close season</span>`}
+          ${e.note ? `<span class="note">${e.note}</span>` : ``}
+        </div>
+      `).join("");
+    }
+
+    // Upcoming cards
+    const upcomingCards = document.getElementById("upcomingCards");
+    if(upcoming.length === 0){
+      upcomingCards.innerHTML = `<div class="empty-msg">No new seasons opening in the next 3 months.</div>`;
+    } else {
+      upcomingCards.innerHTML = upcoming.map(e => {
+        const soon = e.status.opensIn <= 30;
+        return `
+        <div class="status-card ${soon ? 'is-soon' : 'is-closed'}">
+          <div class="row1">
+            <span class="species-name">${speciesLink(e.species)}</span>
+            <span class="badge ${soon ? 'soon' : 'closed'}">${soon ? 'Opening Soon' : 'Closed'}</span>
+          </div>
+          <span class="sex-tag">${e.sex}</span>
+          <span class="dates">${dateRangeLabel(e)}</span>
+          <span class="countdown">Opens in ${e.status.opensIn} day${e.status.opensIn===1?'':'s'} (${fmtMD(e.start)})</span>
+          ${e.note ? `<span class="note">${e.note}</span>` : ``}
+        </div>
+      `;
+      }).join("");
+    }
+
+    // Full reference table
+    const refTable = document.getElementById("refTable");
+    refTable.innerHTML = `
+      <div class="ref-row head">
+        <span>Species</span><span>Sex</span><span style="text-align:right">Open Season</span>
+      </div>
+      ${computed.map(e => `
+        <div class="ref-row">
+          <span class="rr-species"><span class="status-dot ${e.status.open ? 'open':'closed'}"></span>${speciesLink(e.species)}</span>
+          <span class="rr-sex">${e.sex}</span>
+          <span class="rr-dates">${dateRangeLabel(e)}${e.note ? `<small>${e.note}</small>` : ``}</span>
+        </div>
+      `).join("")}
+    `;
+  }
+
+  document.getElementById("todayChip").textContent = today.toLocaleDateString("en-GB", {weekday:"long", day:"numeric", month:"long", year:"numeric"});
+
+  document.getElementById("regionToggle").addEventListener("click", (ev) => {
+    const btn = ev.target.closest("button[data-region]");
+    if(!btn) return;
+    currentRegion = btn.dataset.region;
+    document.querySelectorAll("#regionToggle button").forEach(b => b.classList.toggle("active", b === btn));
+    render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
